@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>sampleProjectGroupId</groupId>
+  <artifactId>sampleProjectId</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>sampleProjectName</name>
+  <description>Sample project description </description>
+  
+	<!-- Parameters -->  
+	<!-- 
+	<properties>
+	  <selenium.version>3.141.59</selenium.version>
+	  <testng.version>7.1.0</testng.version>
+	</properties>
+  -->
+  <dependencies>
+  <!-- Selenium dependency -->
+	  <dependency>
+	   <groupId>org.seleniumhq.selenium</groupId>
+	   <artifactId>selenium-java</artifactId>
+	   <!-- <version>${selenium.version}</version> -->
+	   <version>3.141.0</version>
+	   <scope>test</scope>
+	  </dependency>
+	  
+  <!-- TestNG dependency -->
+	  <dependency>
+	   <groupId>org.testng</groupId>
+	   <artifactId>testng</artifactId>
+	   <version>6.11</version>
+	   <!-- <version>${testng.version}</version> -->
+	  </dependency>
+	 <!-- Json --> 
+	  <dependency>
+   		<groupId>org.json</groupId>
+   		<artifactId>json</artifactId>
+    	<version>20201115</version>
+	  </dependency>
+<!-- Json simple -->
+	<dependency>
+	    <groupId>com.googlecode.json-simple</groupId>
+	    <artifactId>json-simple</artifactId>
+	    <version>1.1.1</version>
+	</dependency>	  
+	  	  
+  </dependencies>
+  
+  <!-- Build plugin -->
+  <build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <filtering>true</filtering>
+            <!-- <targetPath>${project.build.directory}</targetPath>
+            <includes>
+                <include>log4j.properties</include>
+            </includes> -->
+        </resource>
+    </resources>
+</build>
+  <!-- 
+  <build>
+  	<plugins>
+  		<plugin>
+  		
+  		</plugin>
+  	</plugins>
+  </build>
+  
+   -->
+</project>
