@@ -12,7 +12,10 @@ import java.util.TreeMap;
 
 public class JavaMapConcepts {
 	
-	public static void main(String[] args) {
+	/**
+	 * Iterate over HashMap using entrySet()
+	 */
+	public void iterateOverHashMap() {
 		Map<String,String> map1=new HashMap<String,String>();
 		map1.put(null,"abc");
 		map1.put("Key1","Value1");
@@ -34,7 +37,12 @@ public class JavaMapConcepts {
 		for(Map.Entry<String,String> entry : map1.entrySet()) {
 			System.out.println("Key : "+entry.getKey()+" , Value : "+entry.getValue());
 		}
-
+	}
+	
+	/**
+	 * Iterate over HashMap using  Lambda expression
+	 */
+	public void iterateOnLambdaExpression() {
 		Map<Integer,String> map2 = new HashMap<>();	
 		map2.put(null,null);
 		map2.put(null,"0");
@@ -46,7 +54,13 @@ public class JavaMapConcepts {
 		System.out.println("--------2 Iterating over forEach lambda expression-------------");
 		map2.forEach((K,V) ->
 		System.out.println("Key :"+K+" , Value :"+V));
-		
+	}
+	
+	/**
+	 * Iterate over HashMap using iterator
+	 * 
+	 */
+	public void iterateMapOverIterator() {
 		System.out.println("--------------3 Using Iterators-------------");
 		Map<Integer,String> map3 = new HashMap<>();	
 		map3.put(null,null);
@@ -89,7 +103,12 @@ public class JavaMapConcepts {
 			Map.Entry<Integer,String> entry=itr1.next();
 			System.out.println("Key :"+entry.getKey()+" , Value :"+entry.getValue());
 		}
-		
+	}
+	
+	/**
+	 * Sort Map using TreeMap
+	 */
+	public void sortMap() {
 		System.out.println("----- How to retrieve in an order using Map or to sort the key value pairs? \n Use TreeMap . It does not allow null key values , keys are unique and ordered where as values are not unique but null values are allowed----");
 		Map<String,String> unorderedMap = new TreeMap<>();
 		unorderedMap.put("Key6","Value6");
@@ -106,8 +125,13 @@ public class JavaMapConcepts {
 		
 		unorderedMap.forEach((K,V)->
 		System.out.println("K :"+K+" , V :"+V)
-				);
-		
+				);		
+	}
+	
+	/**
+	 * HashTable does not allow null key and also null values and also Thread safe
+	 */
+	public void threadSafeMapWithNoNullKeyNoNullValue() {
 		System.out.println("----- Which map do we need to use with No null keys and No null values and Thread safe map ? \n Use HashTable . It does not allow niether null key nor null values and keys are unique but keys are unordered. values are not unique----");
 		Map<Integer,Integer>hashTable1 = new Hashtable<Integer,Integer>();
 		hashTable1.put(10,10);
@@ -122,8 +146,13 @@ public class JavaMapConcepts {
 		//hashTable1.put(0,null);
 		hashTable1.put(6,5);
 		hashTable1.forEach((K,V) ->
-		System.out.println("K :"+K+" , V :"+V));
-		
+		System.out.println("K :"+K+" , V :"+V));		
+	}
+	
+	/**
+	 * Sort HashTable using Collections.sort()
+	 */
+	public void sortHashTable() {
 		System.out.println("How to order Hashtable ? There are ways to sort Hashtable using Collections.list and Collections.sort.\n however best thing to do is use LinkedHashMap or TreeMap.");
 		System.out.println("To maintain insertion order use LinkedHashMap");
 		LinkedHashMap<Integer,Integer> linkHashMap1=new LinkedHashMap<>();
@@ -146,7 +175,7 @@ public class JavaMapConcepts {
 		Collections.sort(al1); //if there are null throws exception
 
 		System.out.println("Key list after sorting :"+al1);
-		System.out.println("Value list before starting :"+al2);
+		System.out.println("Value list before sorting :"+al2);
 		//Collections.sort(al2);
 		//System.out.println("Value list after sorting :"+al2);
 		
@@ -155,7 +184,12 @@ public class JavaMapConcepts {
 		
 		linkHashMap1.forEach((K,V)->
 		System.out.println("K :"+K+" , V :"+V));
-		
+	}
+	
+	/**
+	 * removeAall() and retainAll()
+	 */
+	public void hashMapFunctions() {
 		LinkedHashMap<Integer,Integer> linkHashMap2=new LinkedHashMap<>();
 		linkHashMap2.put(10,10);
 		linkHashMap2.put(5,5);
@@ -188,9 +222,19 @@ public class JavaMapConcepts {
 		System.out.println("retailAll()");
 		linkHashMap2.keySet().retainAll(linkHashMap3.keySet());
 		
-		System.out.println("--------------------");
-
-		
+		System.out.println("--------------------");		
+	}
+	
+	
+	public static void main(String[] args) {
+		JavaMapConcepts maps=new JavaMapConcepts();
+		maps.iterateOverHashMap();
+		//maps.iterateOnLambdaExpression();
+		//maps.iterateMapOverIterator();
+		//maps.sortMap();
+		//maps.threadSafeMapWithNoNullKeyNoNullValue();
+		//maps.sortHashTable();
+		//maps.hashMapFunctions();
 	}
 
 }
