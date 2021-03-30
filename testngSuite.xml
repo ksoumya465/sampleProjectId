@@ -37,18 +37,19 @@
        		</methods>
        </class>
        -->
-         <!-- Working
+         
        <class name="com.test.GooglePageTest">
        		<methods>
        			<include name="verifyBrowserFunctionalities"></include>
        		</methods>
        </class>
-          --><!--Working Guru99 Demo Text box , Drop down , Radio button and Reset button-->
+          <!--Working Guru99 Demo Text box , Drop down , Radio button and Reset button-->
+        <!-- 
           <class name="com.test.XpathTest">
           	<methods>
           		<include name="testRegister" />
           	</methods>
-          </class>              
+          </class>    -->           
     </classes>
   </test>
 </suite>
